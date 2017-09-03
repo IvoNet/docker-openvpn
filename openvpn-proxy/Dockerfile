@@ -10,7 +10,7 @@ ADD squid/ /etc/squid/
 
 RUN chmod +x /etc/squid/squid-*.sh \
  && mkdir -p /etc/service/squid \
- && ln -s /etc/squid/squid-run.sh /etc/service/squid/run
+ && ln -s /etc/squid/squid-run.sh /etc/service/squid/run \
+ && sed -i 's~\"\$@~service squid start\n\"\$@~g' /entrypoint.sh
 
 EXPOSE 3128
-CMD ["service", "squid", "start"]

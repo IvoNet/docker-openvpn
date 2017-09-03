@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+echo "Current IP address is: $(curl -s ipecho.net/plain)"

@@ -10,12 +10,11 @@ RUN apt-get update \
  && dpkg -i dumb-init_*.deb \
  && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /dumb-init_*.deb
 
-
 ADD bin/ /usr/local/bin/
 ADD entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh \
- && chmod +x /usr/local/bin/*.sh
+ && chmod +x /usr/local/bin/*
 
 WORKDIR /etc/openvpn
 VOLUME ["/config","/credentials"]
