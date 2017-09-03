@@ -13,10 +13,9 @@ RUN apt-get update \
 
 ADD bin/ /usr/local/bin/
 ADD entrypoint.sh /entrypoint.sh
+
 RUN chmod +x /entrypoint.sh \
- && chmod +x /usr/local/bin/*.sh \
- && mkdir -p /etc/service/openvpn \
- && ln -s /etc/openvpn/bin/openvpn-run.sh /etc/service/openvpn/run \
+ && chmod +x /usr/local/bin/*.sh
 
 WORKDIR /etc/openvpn
 VOLUME ["/config","/credentials"]

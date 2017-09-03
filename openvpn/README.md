@@ -17,5 +17,8 @@ This image enables you with some preparation to run openvpn within a docker cont
 ```bash
 docker run -it --privileged --name vpn --rm --dns 8.8.8.8 --dns 8.8.4.4 -v $(pwd)/config:/config -v $(pwd)/credentials:/credentials ivonet/openvpn
 ```
+```bash
+docker run -it --privileged --name vpn --rm --dns 8.8.8.8 --dns 8.8.4.4 -v $(pwd)/config:/config -v $(pwd)/credentials:/credentials --entrypoint=/bin/bash ivonet/openvpn
+```
 
 If something goes wrong you hopefully get a specific message telling what to fix.

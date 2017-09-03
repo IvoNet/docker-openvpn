@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-echo $(curl ipecho.net/plain)
+echo "Your IP address is: $(curl -s ipecho.net/plain)"

@@ -13,4 +13,4 @@ RUN chmod +x /etc/squid/squid-*.sh \
  && ln -s /etc/squid/squid-run.sh /etc/service/squid/run
 
 EXPOSE 3128
-ENTRYPOINT []
+CMD ["service", "squid", "start"]

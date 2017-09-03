@@ -1,7 +1,4 @@
-#!/bin/sh
-
-echo "$@"
-"$@"
+#!/bin/bash
 
 CREDENTIALS=/credentials/openvpn-credentials.txt
 if [ -f ${CREDENTIALS} ]
@@ -34,14 +31,25 @@ else
   echo "[ERROR] contains the config files for PureVPN."
   exit 1
 fi
-
-echo "IP address before starting vpn: " $(curl ipecho.net/plain)
+clear
 
 if [ -z "$OPENVPN_CONFIG" ]
 then
     OPENVPN_CONFIG=Netherlands1-tcp.ovpn
 fi
 
-exec openvpn --config "$OPENVPN_CONFIG"
+ORIG_IP=$(curl -s ipecho.net/plain)
+echo "Before the vpn has been activated: $ORIG_IP"
+NEW_IP="$ORIG_IP"
+echo "Starting OpenVPN.."
+openvpn --daemon --log /var/log/openvpn --script-security 2 --auth-nocache --config "$OPENVPN_CONFIG"
+while [ "$ORIG_IP" == "$NEW_IP" ]
+do
+    sleep 2
+    NEW_IP=$(curl -s ipecho.net/plain)
+done
+echo "After the vpn has been activated: $NEW_IP"
 
+"$@"
+exec tail -f -n 1 /var/log/openvpn
 
