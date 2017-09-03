@@ -1,6 +1,7 @@
-FROM ivonet/openvpn:latest
+FROM ivonet/openvpn
 MAINTAINER IvoNet <webmaster@hardcoder.nl>
 
+#https://support.purevpn.com/linux-openvpn-command
 RUN wget --no-check-certificate https://s3-us-west-1.amazonaws.com/heartbleed/linux/linux-files.zip \
  && unzip linux-files.zip \
  && mkdir -p /config \

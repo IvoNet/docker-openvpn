@@ -13,15 +13,8 @@ docker pull ivonet/purevpn
 
 ### run
 
-```bash
-docker run -it \
-  --privileged \
-  --name vpn \
-  --rm \
-  --dns 8.8.8.8 --dns 8.8.4.4 \
-  -v $(pwd)/credentials:/credentials \
-  ivonet/purevpn
-```
+create a directory called `credentials` and put a file in there called `openvpn-credentials.txt`
+put your username and password in there from your vpn provider each on a line and then run the following command:
 
 ```bash
 docker run -it --privileged --name vpn --rm --dns 8.8.8.8 --dns 8.8.4.4 -v $(pwd)/credentials:/credentials ivonet/purevpn
