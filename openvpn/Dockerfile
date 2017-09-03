@@ -4,7 +4,6 @@ MAINTAINER IvoNet <webmaster@hardcoder.nl>
 # Evironment variables
 ENV DEBIAN_FRONTEND=noninteractive
 
-
 RUN apt-get update && \
     apt-get install --no-install-recommends -y openvpn iptables wget curl unzip &&\
     wget --no-check-certificate https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64.deb &&\

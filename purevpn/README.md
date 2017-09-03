@@ -26,3 +26,10 @@ docker run -it \
 ```bash
 docker run -it --privileged --name vpn --rm --dns 8.8.8.8 --dns 8.8.4.4 -v $(pwd)/credentials:/credentials ivonet/purevpn
 ```
+
+### Check
+
+The following command should give another IP address then your onw IP if it all works...
+```bash
+docker exec -it vpn curl ipecho.net/plain
+```

@@ -1,3 +1,15 @@
 #!/usr/bin/env bash
-openvpn.sh
-purevpn.sh
+cd openvpn
+build.sh
+if [ $? -ne 0 ]; then
+    echo "Build failed."
+    exit 1
+fi
+
+cd ../purevpn
+build.sh
+if [ $? -ne 0 ]; then
+    echo "Build failed."
+    exit 1
+fi
+
