@@ -1,12 +1,14 @@
 # openvpn image
 
-This image enables you with some preparation to run openvpn within a docker container
+This image enables you with some preparation to run openvpn within a docker container.
+
+This image can be considered a base image for other openvpn based images...
 
 ## Build
 
 * run the `build.sh` command
 
-## run
+## Run
 
 * download the ovpn config files from your vpn provider (see your vpn provider website)
 * place the (extracted) files in a folder called `config`
@@ -17,8 +19,5 @@ This image enables you with some preparation to run openvpn within a docker cont
 ```bash
 docker run -it --privileged --name vpn --rm --dns 8.8.8.8 --dns 8.8.4.4 -v $(pwd)/config:/config -v $(pwd)/credentials:/credentials ivonet/openvpn
 ```
-```bash
-docker run -it --privileged --name vpn --rm --dns 8.8.8.8 --dns 8.8.4.4 -v $(pwd)/config:/config -v $(pwd)/credentials:/credentials --entrypoint=/bin/bash ivonet/openvpn
-```
 
-If something goes wrong you hopefully get a specific message telling what to fix.
+If something goes wrong you hopefully get a specific message telling what to fix ;-)

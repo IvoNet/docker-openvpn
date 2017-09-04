@@ -1,7 +1,9 @@
 # PureVPN image
 
-This image extends on the `ivonet/openvpn` image in order to have purevpn 
+This image extends on the [ivonet/openvpn](../openvpn/README.md) image in order to have purevpn 
 enabled by default.
+
+No real practical value as the proxy version is more use ;-)
 
 ## usage
 
