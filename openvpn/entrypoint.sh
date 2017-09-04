@@ -1,5 +1,7 @@
 #!/bin/bash
 
+"$@"
+
 CREDENTIALS=/credentials/openvpn-credentials.txt
 if [ -f ${CREDENTIALS} ]
 then
@@ -31,7 +33,6 @@ else
   echo "[ERROR] contains the config files for PureVPN."
   exit 1
 fi
-clear
 
 if [ -z "$OPENVPN_CONFIG" ]
 then
@@ -50,6 +51,5 @@ do
 done
 echo "After the vpn has been activated: $NEW_IP"
 
-"$@"
-exec tail -f -n 1 /var/log/openvpn
+exec tail -f -n 0 /var/log/openvpn
 
