@@ -37,6 +37,7 @@ fi
 if [ -z "$OPENVPN_CONFIG" ]
 then
     OPENVPN_CONFIG=Netherlands1-tcp.ovpn
+    echo "[WARNING] No OPENVPN_CONFIG provided, so going for the default [$OPENVPN_CONFIG]."
 fi
 
 ORIG_IP=$(curl -s ipecho.net/plain)
