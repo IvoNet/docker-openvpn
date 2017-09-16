@@ -21,6 +21,7 @@ Synology NAS:
 docker run -it --rm --name purevpn-proxy --privileged --dns 8.8.8.8 --dns 8.8.4.4 -v $(pwd):/credentials -p 3128:3128 ivonet/purevpn-proxy
 docker run -it --rm --name purevpn-proxy --cap-add=NET_ADMIN --device=/dev/net/tun --dns 8.8.8.8 --dns 8.8.4.4 -v $(pwd):/credentials -p 3128:3128 ivonet/purevpn-proxy
 docker run -it --rm --name purevpn-proxy --privileged --cap-add=NET_ADMIN --device=/dev/net/tun --dns 8.8.8.8 --dns 8.8.4.4 -v $(pwd):/credentials -p 3128:3128 ivonet/purevpn-proxy
+docker run -it --rm --name purevpn-proxy --privileged --device=/dev/net/tun --dns 8.8.8.8 --dns 8.8.4.4 -v $(pwd):/credentials -p 3128:3128 ivonet/purevpn-proxy
 ```
 * remove `-it --rm` if you are happy with how it works and want to start it from DSM
 

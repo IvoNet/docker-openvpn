@@ -11,3 +11,7 @@ Contains images:
 ## Blog
 
 See my [blog]() entry about these images
+
+## Issues
+
+Please read the blog because it handles the issues I found...

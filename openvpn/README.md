@@ -17,7 +17,7 @@ This image can be considered a base image for other openvpn based images...
 * run the following command:
 
 ```bash
-docker run -it --privileged --name vpn --rm --dns 8.8.8.8 --dns 8.8.4.4 -v $(pwd)/config:/config -v $(pwd)/credentials:/credentials ivonet/openvpn
+docker run -it --privileged --name vpn --cap-add=NET_ADMIN --device=/dev/net/tun --rm --dns 8.8.8.8 --dns 8.8.4.4 -v $(pwd)/config:/config -v $(pwd)/credentials:/credentials ivonet/openvpn
 ```
 
 If something goes wrong you hopefully get a specific message telling what to fix ;-)
