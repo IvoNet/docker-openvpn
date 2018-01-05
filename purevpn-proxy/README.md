@@ -25,11 +25,13 @@ docker run -it --rm --name purevpn-proxy --privileged --device=/dev/net/tun --dn
 ```
 * remove `-it --rm` if you are happy with how it works and want to start it from DSM
 
-NOTE: On synology it does not seam to work due to this message, that I have not yet solved HELP APPRECIATED:
+NOTE: On synology it does not seem to work due to this message:
 
 ```text
 ERROR: Cannot open TUN/TAP dev /dev/net/tun: No such file or directory (errno=2)
 ```
+
+The blog mentioned above will help you solve this error :-)
 
 Daemon mode:
 
