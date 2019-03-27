@@ -10,7 +10,7 @@ Contains images:
 
 ## Blog
 
-See my [blog](http://ivo2u.nl/5D) entry about these images
+See my [blog](http://ivo2u.nl/5H) entry about these images
 
 ## Issues
 
