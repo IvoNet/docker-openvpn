@@ -1,5 +1,7 @@
 # VPN images
 
+_*DEPRECATED: See the docker-nordvpn repo*_
+
 Contains images: 
 
 * [ivonet/openvpn](openvpn/README.md)
